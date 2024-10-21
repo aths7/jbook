@@ -3,9 +3,10 @@ import { createRoot } from "react-dom/client";
 import { useState, useEffect, useRef } from "react";
 
 import { unpkgPathPlugin } from "./plugins/unpkg-path-plugin";
+import { fetchPlugin } from "./plugins/fetch-plugin";
 
 const App = () => {
-  const [input, setInput] = useState<string>("");
+  const [input, setInput] = useState<string>("console.log(1);");
   const [code, setCode] = useState();
   const ref = useRef<any>();
 
@@ -30,7 +31,7 @@ const App = () => {
       entryPoints: ["index.js"],
       bundle: true,
       write: false,
-      plugins: [unpkgPathPlugin(input)],
+      plugins: [unpkgPathPlugin(), fetchPlugin(input)],
       define: {
         "process.env.NODE_ENV": '"production"',
         global: "window",
