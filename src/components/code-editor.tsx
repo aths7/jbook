@@ -27,7 +27,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
       monacoEditor
     );
 
-    highlighter.highLightonDidChangeModelContent(
+    highlighter.highLightOnDidChangeModelContent(
       () => {},
       () => {},
       undefined,
