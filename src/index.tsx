@@ -38,14 +38,11 @@ const App = () => {
         global: "window",
       },
     });
-    console.log(result);
     setCode(result.outputFiles[0].text);
-    try {
-      eval(result.outputFiles[0].text);
-    } catch (e) {
-      console.log(e);
-    }
   };
+  const html = `
+<script>${code}</script>
+`;
 
   return (
     <div>
@@ -58,8 +55,8 @@ const App = () => {
       </div>
       <pre>{code}</pre>
       <iframe
-        src="/test.html"
-        sandbox=""
+        srcDoc={html}
+        sandbox="allow-scripts"
       />
     </div>
   );
