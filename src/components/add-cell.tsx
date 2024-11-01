@@ -1,5 +1,7 @@
 import "./add-cell.css";
 import { useActions } from "../hooks/use-actions";
+import { Link } from 'react-router-dom';
+
 
 interface AddCellProps {
   prevCellId: string | null;
@@ -11,6 +13,16 @@ const AddCell: React.FC<AddCellProps> = ({ prevCellId, forceVisible }) => {
   return (
     <div className={`add-cell ${forceVisible && "force-visible"}`}>
       <div className="add-buttons">
+        <Link to="/">
+          <button
+            className="button is-rounded is-primary is-small"
+          >
+            <span className="icon is-small">
+              <i className="fas fa-arrow-left"></i>
+            </span>
+            <span>Back</span>
+          </button>
+        </Link>
         <button
           className="button is-rounded is-primary is-small"
           onClick={() => insertCellAfter(prevCellId, "code")}

@@ -1,0 +1,12 @@
+.content{
+    display: flex;
+    align-items: center ;
+}
+
+.full-screen-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
