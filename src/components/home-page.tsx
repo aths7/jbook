@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
         <div >
             <div className='block'>
                 <div className="container has-text-centered m5">
-                    <h1 className='title m-5'>React Editor</h1>
+                    <h1 className='title m-5'>Custom Editor</h1>
                 </div>
             </div>
             <div className='block'>
